@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>opencv c++ 特征提取与检测 | yfy的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="opencv 特征提取与检测目录1.harris角点检测2.Shi-Tomasi 角点检测3.sift算法4.fast算法5.orb算法总结与对比 1.harris角点检测 1.角点角点还没有明确的数学定义，但普遍具有以下特征：  局部小窗口沿各方向移动，窗口内的像素均产生明显变化的点。  图像局部曲率(梯度)突变的点。  对于同一场景，即使视角发生变化，其角点通常具备某些稳定不变性质的特征">
+  <meta name="description" content="opencv 特征提取与检测目录1.harris角点检测2.Shi-Tomasi 角点检测3.sift算法4.fast算法5.orb算法6.总结与对比 1.harris角点检测 1.角点角点还没有明确的数学定义，但普遍具有以下特征：  局部小窗口沿各方向移动，窗口内的像素均产生明显变化的点。  图像局部曲率(梯度)突变的点。  对于同一场景，即使视角发生变化，其角点通常具备某些稳定不变性质的特征">
 <meta property="og:type" content="article">
 <meta property="og:title" content="opencv c++ 特征提取与检测">
 <meta property="og:url" content="http://example.com/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/index.html">
 <meta property="og:site_name" content="yfy的博客">
-<meta property="og:description" content="opencv 特征提取与检测目录1.harris角点检测2.Shi-Tomasi 角点检测3.sift算法4.fast算法5.orb算法总结与对比 1.harris角点检测 1.角点角点还没有明确的数学定义，但普遍具有以下特征：  局部小窗口沿各方向移动，窗口内的像素均产生明显变化的点。  图像局部曲率(梯度)突变的点。  对于同一场景，即使视角发生变化，其角点通常具备某些稳定不变性质的特征">
+<meta property="og:description" content="opencv 特征提取与检测目录1.harris角点检测2.Shi-Tomasi 角点检测3.sift算法4.fast算法5.orb算法6.总结与对比 1.harris角点检测 1.角点角点还没有明确的数学定义，但普遍具有以下特征：  局部小窗口沿各方向移动，窗口内的像素均产生明显变化的点。  图像局部曲率(梯度)突变的点。  对于同一场景，即使视角发生变化，其角点通常具备某些稳定不变性质的特征">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/1.png">
 <meta property="og:image" content="http://example.com/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/2.png">
@@ -28,7 +28,7 @@
 <meta property="og:image" content="http://example.com/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/12.png">
 <meta property="og:image" content="http://example.com/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/13.png">
 <meta property="article:published_time" content="2023-02-22T04:08:57.000Z">
-<meta property="article:modified_time" content="2023-03-08T09:24:45.292Z">
+<meta property="article:modified_time" content="2023-03-08T09:29:19.642Z">
 <meta property="article:author" content="yfy">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/1.png">
@@ -179,7 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="opencv-特征提取与检测"><a href="#opencv-特征提取与检测" class="headerlink" title="opencv 特征提取与检测"></a>opencv 特征提取与检测</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h2 id="1-harris角点检测"><a href="#1-harris角点检测" class="headerlink" title="1.harris角点检测"></a><a href="#harris%E8%A7%92%E7%82%B9%E6%A3%80%E6%B5%8B">1.harris角点检测</a></h2><h2 id="2-Shi-Tomasi-角点检测"><a href="#2-Shi-Tomasi-角点检测" class="headerlink" title="2.Shi-Tomasi 角点检测"></a><a href="#Shi-Tomasi%E8%A7%92%E7%82%B9%E6%A3%80%E6%B5%8B">2.Shi-Tomasi 角点检测</a></h2><h2 id="3-sift算法"><a href="#3-sift算法" class="headerlink" title="3.sift算法"></a><a href="#sift%E7%AE%97%E6%B3%95">3.sift算法</a></h2><h2 id="4-fast算法"><a href="#4-fast算法" class="headerlink" title="4.fast算法"></a><a href="#fast%E7%AE%97%E6%B3%95">4.fast算法</a></h2><h2 id="5-orb算法"><a href="#5-orb算法" class="headerlink" title="5.orb算法"></a><a href="#orb%E7%AE%97%E6%B3%95">5.orb算法</a></h2><h2 id="总结与对比"><a href="#总结与对比" class="headerlink" title="总结与对比"></a><a href="#%E6%80%BB%E7%BB%93%E4%B8%8E%E5%AF%B9%E6%AF%94">总结与对比</a></h2><hr>
+        <h1 id="opencv-特征提取与检测"><a href="#opencv-特征提取与检测" class="headerlink" title="opencv 特征提取与检测"></a>opencv 特征提取与检测</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h2 id="1-harris角点检测"><a href="#1-harris角点检测" class="headerlink" title="1.harris角点检测"></a><a href="#harris%E8%A7%92%E7%82%B9%E6%A3%80%E6%B5%8B">1.harris角点检测</a></h2><h2 id="2-Shi-Tomasi-角点检测"><a href="#2-Shi-Tomasi-角点检测" class="headerlink" title="2.Shi-Tomasi 角点检测"></a><a href="#Shi-Tomasi%E8%A7%92%E7%82%B9%E6%A3%80%E6%B5%8B">2.Shi-Tomasi 角点检测</a></h2><h2 id="3-sift算法"><a href="#3-sift算法" class="headerlink" title="3.sift算法"></a><a href="#sift%E7%AE%97%E6%B3%95">3.sift算法</a></h2><h2 id="4-fast算法"><a href="#4-fast算法" class="headerlink" title="4.fast算法"></a><a href="#fast%E7%AE%97%E6%B3%95">4.fast算法</a></h2><h2 id="5-orb算法"><a href="#5-orb算法" class="headerlink" title="5.orb算法"></a><a href="#orb%E7%AE%97%E6%B3%95">5.orb算法</a></h2><h2 id="6-总结与对比"><a href="#6-总结与对比" class="headerlink" title="6.总结与对比"></a><a href="#6.%E6%80%BB%E7%BB%93%E4%B8%8E%E5%AF%B9%E6%AF%94">6.总结与对比</a></h2><hr>
 <p><a id="harris角点检测"><font size="5"><b>1.harris角点检测</b></font></a></p>
 <h2 id="1-角点"><a href="#1-角点" class="headerlink" title="1.角点"></a>1.角点</h2><p>角点还没有明确的数学定义，但普遍具有以下特征：</p>
 <ul>
@@ -272,7 +272,7 @@
 </ul>
 <h2 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">void orb(Mat &amp;src)</span><br><span class="line">&#123;</span><br><span class="line">    cv::Ptr&lt;cv::ORB&gt; orb = cv::ORB::create(50);</span><br><span class="line"></span><br><span class="line">	//特征点</span><br><span class="line">	std::vector&lt;cv::KeyPoint&gt; keyPointL, keyPointR;</span><br><span class="line">	//单独提取特征点</span><br><span class="line">	orb-&gt;detect(src, keyPointL);</span><br><span class="line">	//画特征点</span><br><span class="line">	cv::Mat keyPointImageL;</span><br><span class="line">	drawKeypoints(src, keyPointL, keyPointImageL, cv::Scalar::all(-1), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS);</span><br><span class="line"></span><br><span class="line">	//显示窗口</span><br><span class="line">	cv::namedWindow(&quot;KeyPoints of imageL&quot;);</span><br><span class="line"></span><br><span class="line">	//显示特征点</span><br><span class="line">	cv::imshow(&quot;KeyPoints of imageL&quot;, keyPointImageL);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h2><p><img src="/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/10.png" alt="orb"></p>
-<p><a id="总结与对比"><font size="5"><b>总结与对比</b></font></a></p>
+<p><a id="6.总结与对比"><font size="5"><b>6.总结与对比</b></font></a></p>
 <p>对比主要从两个角度，结果和时间。</p>
 <p><img src="/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/11.png" alt="zongjie1"><br><img src="/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/12.png" alt="zongjie2"></p>
 <p>从左到右为 原图，harris,shi-tomasi<br>          sift, fast ,orb</p>
