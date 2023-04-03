@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023 | yfy的博客</title>
+  <title>学qt的那些坑（一）关于QObject下starttimer定时器 | yfy的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学生一枚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yfy的博客">
-<meta property="og:url" content="http://example.com/archives/2023/index.html">
+  <meta name="description" content="问题在b站学qt,学到qt定时器，照着他的代码写一个相册，功能是点击开始按钮之后，一秒切换一张图片，用到的主要是qt定时器，用的是qtobject下的starttimer。感觉有必要学习下，有说starttimer的效率比Qtimer效率高 引用QT定时任务- timerEvent事件使用以及和QTimer 定时器的使用区别，于是按照b站教程写了代码，出现问题，定时器不工作。源代码如下 12345">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学qt的那些坑（一）关于QObject下starttimer定时器">
+<meta property="og:url" content="http://example.com/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/index.html">
 <meta property="og:site_name" content="yfy的博客">
-<meta property="og:description" content="学生一枚">
+<meta property="og:description" content="问题在b站学qt,学到qt定时器，照着他的代码写一个相册，功能是点击开始按钮之后，一秒切换一张图片，用到的主要是qt定时器，用的是qtobject下的starttimer。感觉有必要学习下，有说starttimer的效率比Qtimer效率高 引用QT定时任务- timerEvent事件使用以及和QTimer 定时器的使用区别，于是按照b站教程写了代码，出现问题，定时器不工作。源代码如下 12345">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/1.png">
+<meta property="og:image" content="http://example.com/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/2.png">
+<meta property="og:image" content="http://example.com/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/3.png">
+<meta property="article:published_time" content="2023-03-09T06:25:56.000Z">
+<meta property="article:modified_time" content="2023-03-09T06:44:29.682Z">
 <meta property="article:author" content="yfy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/1.png">
   
     <link rel="alternative" href="/atom.xml" title="yfy的博客" type="application/atom+xml">
   
@@ -144,211 +150,177 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-学qt的那些坑（一）关于QObject下starttimer定时器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/03/24/qt-%E5%9B%BE%E5%83%8F%E6%B8%85%E6%99%B0%E5%BA%A6%E8%AF%84%E4%BB%B7/" class="archive-article-date">
-  	<time datetime="2023-03-24T02:05:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/24/qt-%E5%9B%BE%E5%83%8F%E6%B8%85%E6%99%B0%E5%BA%A6%E8%AF%84%E4%BB%B7/">qt-图像清晰度评价</a>
+    <h1 class="article-title" itemprop="name">
+      学qt的那些坑（一）关于QObject下starttimer定时器
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/" class="archive-article-date">
+        
+        <a href="/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/" class="archive-article-date">
   	<time datetime="2023-03-09T06:25:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/">学qt的那些坑（一）关于QObject下starttimer定时器</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在b站学qt,学到qt定时器，照着他的代码写一个相册，功能是点击开始按钮之后，一秒切换一张图片，用到的主要是qt定时器，用的是qtobject下的starttimer。感觉有必要学习下，有说starttimer的效率比Qtimer效率高 引用<a target="_blank" rel="noopener" href="https://blog.csdn.net/corefunction/article/details/116586227">QT定时任务- timerEvent事件使用以及和QTimer 定时器的使用区别</a>，于是按照<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1N34y1H7x7/?p=6&spm_id_from=pageDriver&vd_source=ce84ccb06e52cdc3b9d0d57ad7d930ad">b站教程</a>写了代码，出现问题，定时器不工作。源代码如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">Widget::Widget(QWidget *parent)</span><br><span class="line">    : QWidget(parent)</span><br><span class="line">    , ui(new Ui::Widget)</span><br><span class="line">&#123;</span><br><span class="line">    ui-&gt;setupUi(this);</span><br><span class="line"></span><br><span class="line">    picID=2;</span><br><span class="line">    QPixmap pix(&quot;E:\\study\\qt\\test\\study_widges\\Qobject_timer\\pic\\1.jpg&quot;);</span><br><span class="line">    ui-&gt;label-&gt;setPixmap(pix);</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Widget::~Widget()</span><br><span class="line">&#123;</span><br><span class="line">    delete ui;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void Widget::on_startbotton_clicked()</span><br><span class="line">&#123;</span><br><span class="line">    mytimerID=this-&gt;startTimer(TIMEOUT);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Widget::timeEvent(QTimerEvent * event)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    if(event-&gt;timerId()!=mytimerID)</span><br><span class="line">        return;</span><br><span class="line">    QString path=&quot;E:\\study\\qt\\test\\study_widges\\Qobject_timer\\pic\\&quot;;</span><br><span class="line">    path+=QString::number(picID);</span><br><span class="line">    path += &quot;.jpg&quot;;</span><br><span class="line">    qDebug()&lt;&lt;path&lt;&lt;endl;</span><br><span class="line">    QPixmap pix(path);</span><br><span class="line">    ui-&gt;label-&gt;setPixmap(pix);</span><br><span class="line">    picID++;</span><br><span class="line">    if(picID &gt; 8)</span><br><span class="line">        picID=1;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Widget::on_stop_botton_clicked()</span><br><span class="line">&#123;</span><br><span class="line">    this-&gt;killTimer(mytimerID);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>界面如下：<br><img src="/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/1.png" alt="ui"></p>
+<p>问题就是定时器不工作</p>
+<hr>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>定时器处理函数写错了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void Widget::timeEvent(QTimerEvent * event)</span><br></pre></td></tr></table></figure>
+<p>应改为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void Widget::timerEvent(QTimerEvent * event)</span><br></pre></td></tr></table></figure>
+<p>没想到少一个r,定时器不工作</p>
+<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p>最后程序也是成功运行。</p>
+<p><img src="/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/2.png" alt="pic1"></p>
+<p><img src="/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/3.png" alt="pic2"></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/03/08/%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2023-03-08T09:35:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-08</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2023/03/24/qt-%E5%9B%BE%E5%83%8F%E6%B8%85%E6%99%B0%E5%BA%A6%E8%AF%84%E4%BB%B7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          qt-图像清晰度评价
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/03/08/%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">聚类算法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/08/%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/">聚类算法</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/" class="archive-article-date">
-  	<time datetime="2023-02-22T04:08:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/">opencv c++ 特征提取与检测</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2023-02-18T03:42:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">排序算法总结</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/02/15/makedown%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2023-02-15T09:26:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/02/15/makedown%E5%AD%A6%E4%B9%A0/">Markdown学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/02/15/hello-world/" class="archive-article-date">
-  	<time datetime="2023-02-15T08:14:21.838Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/02/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -371,8 +343,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
