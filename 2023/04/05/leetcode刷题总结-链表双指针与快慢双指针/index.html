@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | yfy的博客</title>
+  <title>leetcode刷题总结 链表快慢双指针 | yfy的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学生一枚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yfy的博客">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="一 概念快慢指针是一种双指针算法，用于解决一些链表或数组的问题。1 它的思想是定义两个指针，一个快一个慢，快指针每次移动的步长大于慢指针，这样可以在一次遍历中找到一些特殊的节点或元素。例如，快慢指针可以用来检测链表是否有环，或者找到链表中的中间节点 二 解决问题1.判断是否为环形链表12345678910leetcode 141给你一个链表的头节点 head ，判断链表中是否有环。如果链表中有某个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode刷题总结 链表快慢双指针">
+<meta property="og:url" content="http://example.com/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/index.html">
 <meta property="og:site_name" content="yfy的博客">
-<meta property="og:description" content="学生一枚">
+<meta property="og:description" content="一 概念快慢指针是一种双指针算法，用于解决一些链表或数组的问题。1 它的思想是定义两个指针，一个快一个慢，快指针每次移动的步长大于慢指针，这样可以在一次遍历中找到一些特殊的节点或元素。例如，快慢指针可以用来检测链表是否有环，或者找到链表中的中间节点 二 解决问题1.判断是否为环形链表12345678910leetcode 141给你一个链表的头节点 head ，判断链表中是否有环。如果链表中有某个">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/huiwen.png">
+<meta property="og:image" content="http://example.com/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/160_statement.png">
+<meta property="og:image" content="http://example.com/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/rev1ex1.jpg">
+<meta property="article:published_time" content="2023-04-05T06:00:48.000Z">
+<meta property="article:modified_time" content="2023-04-05T11:22:57.184Z">
 <meta property="article:author" content="yfy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/huiwen.png">
   
     <link rel="alternative" href="/atom.xml" title="yfy的博客" type="application/atom+xml">
   
@@ -144,238 +150,184 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-leetcode刷题总结-链表双指针与快慢双指针" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      leetcode刷题总结 链表快慢双指针
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/" class="archive-article-date">
+
+        
+        <a href="/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/" class="archive-article-date">
   	<time datetime="2023-04-05T06:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/">leetcode刷题总结 链表快慢双指针</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-概念"><a href="#一-概念" class="headerlink" title="一 概念"></a>一 概念</h1><p>快慢指针是一种双指针算法，用于解决一些链表或数组的问题。1 它的思想是定义两个指针，一个快一个慢，快指针每次移动的步长大于慢指针，这样可以在一次遍历中找到一些特殊的节点或元素。例如，快慢指针可以用来检测链表是否有环，或者找到链表中的中间节点</p>
+<h1 id="二-解决问题"><a href="#二-解决问题" class="headerlink" title="二 解决问题"></a>二 解决问题</h1><h2 id="1-判断是否为环形链表"><a href="#1-判断是否为环形链表" class="headerlink" title="1.判断是否为环形链表"></a>1.判断是否为环形链表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">leetcode 141</span><br><span class="line">给你一个链表的头节点 head ，判断链表中是否有环。</span><br><span class="line"></span><br><span class="line">如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。</span><br><span class="line"></span><br><span class="line">如果链表中存在环 ，则返回 true 。 否则，返回 false 。</span><br><span class="line"></span><br><span class="line">来源：力扣（LeetCode）</span><br><span class="line">链接：https://leetcode.cn/problems/linked-list-cycle</span><br><span class="line">著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。</span><br></pre></td></tr></table></figure>
+<p>使用快慢指针判断是否有环，慢指针每次走一个，快指针一次走两个，如果有环则一定会相交，即指向同一个节点，根据这个判断是否有环。<br>c++解法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool hasCycle(ListNode *head) &#123;</span><br><span class="line">        if(head==NULL || head-&gt;next==NULL) return false;</span><br><span class="line">        ListNode* fast_point=head;</span><br><span class="line">        ListNode* slow_point=head;</span><br><span class="line">        while(fast_point&amp;&amp;fast_point-&gt;next!=NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            fast_point=fast_point-&gt;next-&gt;next;</span><br><span class="line">            slow_point=slow_point-&gt;next;</span><br><span class="line">            if(fast_point==slow_point)</span><br><span class="line">                return true;</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h2 id="2-环形链表返回入环的第一个节点"><a href="#2-环形链表返回入环的第一个节点" class="headerlink" title="2.环形链表返回入环的第一个节点"></a>2.环形链表返回入环的第一个节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">leetcode 142</span><br><span class="line">给定一个链表的头节点  head ，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。</span><br></pre></td></tr></table></figure>
+<p>思路<br>快指针移动两步，慢指针移动一步，相遇之后，慢指针回去变回头指针，然后每次快慢指针各走一步直到相遇，相遇的节点就是入环节点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    ListNode *detectCycle(ListNode *head) &#123;</span><br><span class="line">        ListNode* fast_point=head;</span><br><span class="line">        ListNode* slow_point=head;</span><br><span class="line">        while(fast_point!=NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            if(fast_point-&gt;next==NULL) return NULL;</span><br><span class="line">            fast_point=fast_point-&gt;next-&gt;next;</span><br><span class="line">            slow_point=slow_point-&gt;next;</span><br><span class="line">            if(fast_point==slow_point)</span><br><span class="line">            &#123;</span><br><span class="line">                slow_point=head;</span><br><span class="line">                while(fast_point!=slow_point)</span><br><span class="line">                &#123;</span><br><span class="line">                    fast_point=fast_point-&gt;next;</span><br><span class="line">                    slow_point=slow_point-&gt;next;</span><br><span class="line">                &#125;</span><br><span class="line">                return slow_point;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="3-链表的中间节点"><a href="#3-链表的中间节点" class="headerlink" title="3.链表的中间节点"></a>3.链表的中间节点</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">leetcode 876</span><br><span class="line">给你单链表的头结点 head ，请你找出并返回链表的中间结点。</span><br><span class="line"></span><br><span class="line">如果有两个中间结点，则返回第二个中间结点。</span><br></pre></td></tr></table></figure>
+<p>思路<br>使用快慢指针，快指针一次走两个，慢指针一次走一个，当快指针一次走到头时，慢指针走到中间，注意链表的奇偶对结束条件的影响。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    ListNode* middleNode(ListNode* head) &#123;</span><br><span class="line">        if(head==nullptr) return nullptr;</span><br><span class="line">        ListNode* slow_point=head;</span><br><span class="line">        ListNode* fast_point=head;</span><br><span class="line">        while(fast_point!=nullptr&amp;&amp;fast_point-&gt;next!=nullptr)</span><br><span class="line">        &#123;</span><br><span class="line">            fast_point=fast_point-&gt;next-&gt;next;</span><br><span class="line">            slow_point=slow_point-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return slow_point;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="4-回文链表"><a href="#4-回文链表" class="headerlink" title="4.回文链表"></a>4.回文链表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">leetcode 234</span><br><span class="line"></span><br><span class="line">给你一个单链表的头节点 head ，请你判断该链表是否为回文链表。如果是，返回 true ；否则，返回 false </span><br></pre></td></tr></table></figure>
+<p><img src="/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/huiwen.png" alt="回文链表"></p>
+<p>思路<br>快慢指针在寻找中间节点的过程中直接反转链表前半部分，找到中间节点之后直接从中间向两边开始比较。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public boolean isPalindrome(ListNode head) &#123;</span><br><span class="line">        ListNode pre = null;</span><br><span class="line">        ListNode slow = head;</span><br><span class="line">        ListNode fast = head;</span><br><span class="line">        while(fast != null &amp;&amp; fast.next != null)&#123;</span><br><span class="line">            ListNode temp = slow.next;</span><br><span class="line">            if(pre != null) &#123;</span><br><span class="line">                slow.next = pre;</span><br><span class="line">            &#125;</span><br><span class="line">            pre = slow;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        if(fast != null) slow = slow.next;</span><br><span class="line">        while(slow != null)&#123;</span><br><span class="line">            if(slow.val != pre.val) return false;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            pre = pre.next;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>思路2<br>后半部分反转比较</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    bool isPalindrome(ListNode* head) &#123;</span><br><span class="line">        if(head-&gt;next==nullptr) return true;</span><br><span class="line">        ListNode* fast_point=head;</span><br><span class="line">        ListNode* slow_point=head;</span><br><span class="line">        while(fast_point!=nullptr&amp;&amp;fast_point-&gt;next!=nullptr)</span><br><span class="line">        &#123;</span><br><span class="line">            fast_point=fast_point-&gt;next-&gt;next;</span><br><span class="line">            slow_point=slow_point-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        //分奇偶情况</span><br><span class="line">        if(fast_point!=nullptr)</span><br><span class="line">        </span><br><span class="line">         slow_point=slow_point-&gt;next;</span><br><span class="line">        </span><br><span class="line">        fast_point=slow_point-&gt;next;</span><br><span class="line">        slow_point-&gt;next=nullptr;</span><br><span class="line">        ListNode *temp=fast_point;</span><br><span class="line">        while(temp!=nullptr)</span><br><span class="line">        &#123;</span><br><span class="line">            fast_point=fast_point-&gt;next;</span><br><span class="line">            temp-&gt;next=slow_point;</span><br><span class="line">            slow_point=temp;</span><br><span class="line">            temp=fast_point;</span><br><span class="line">        &#125;</span><br><span class="line">        fast_point=head;</span><br><span class="line">        while(slow_point!=nullptr)</span><br><span class="line">        &#123;</span><br><span class="line">            if(fast_point-&gt;val!=slow_point-&gt;val)</span><br><span class="line">            &#123;</span><br><span class="line">                return false;</span><br><span class="line">            &#125;</span><br><span class="line">            fast_point=fast_point-&gt;next;</span><br><span class="line">            slow_point=slow_point-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="接下来是一些链表的双指针问题"><a href="#接下来是一些链表的双指针问题" class="headerlink" title="接下来是一些链表的双指针问题"></a>接下来是一些链表的双指针问题</h1><h2 id="1-相交链表"><a href="#1-相交链表" class="headerlink" title="1.相交链表"></a>1.相交链表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">leetcode 160</span><br><span class="line">给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null </span><br></pre></td></tr></table></figure>
+<p><img src="/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/160_statement.png" alt="相交链表"></p>
+<p>思路<br>定义两个指针，两个指针用遍历各自的链表，到头时转到另一个链表的头继续遍历，直至相交。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) &#123;</span><br><span class="line">        ListNode* l1=headA;</span><br><span class="line">        ListNode* l2=headB;</span><br><span class="line">        while(l1!=l2)</span><br><span class="line">        &#123;</span><br><span class="line">            l1=l1==NULL?headB:l1-&gt;next;</span><br><span class="line">            l2=l2==NULL?headA:l2-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        if(l1==l2)</span><br><span class="line">            return l1;</span><br><span class="line">        else</span><br><span class="line">            return NULL;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>这个方法可能会没有直接遍历两个链表，取长度差找相交节点快哈哈。</p>
+<h2 id="2-反转链表"><a href="#2-反转链表" class="headerlink" title="2.反转链表"></a>2.反转链表</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">leetcode 206</span><br><span class="line">给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。</span><br></pre></td></tr></table></figure>
+<p><img src="/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/rev1ex1.jpg" alt="反转链表"></p>
+<p>思路<br>定义两个指针，一个在前面遍历，每遍历一个就把该指针的next指向前一个，这样当第一个指针遍历完时，后一个指针就是反转链表的头。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    ListNode* reverseList(ListNode* head) &#123;</span><br><span class="line">        ListNode* pre=nullptr;</span><br><span class="line">        ListNode* temp=head;</span><br><span class="line">        while(temp!=nullptr)</span><br><span class="line">        &#123;</span><br><span class="line">            head=head-&gt;next;</span><br><span class="line">            temp-&gt;next=pre;</span><br><span class="line">            pre=temp;</span><br><span class="line">            temp=head;</span><br><span class="line">        &#125;</span><br><span class="line">        return pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/03/24/qt-%E5%9B%BE%E5%83%8F%E6%B8%85%E6%99%B0%E5%BA%A6%E8%AF%84%E4%BB%B7/" class="archive-article-date">
-  	<time datetime="2023-03-24T02:05:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2023/03/24/qt-%E5%9B%BE%E5%83%8F%E6%B8%85%E6%99%B0%E5%BA%A6%E8%AF%84%E4%BB%B7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">qt-图像清晰度评价</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/24/qt-%E5%9B%BE%E5%83%8F%E6%B8%85%E6%99%B0%E5%BA%A6%E8%AF%84%E4%BB%B7/">qt-图像清晰度评价</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2023-03-09T06:25:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/09/%E5%AD%A6qt%E7%9A%84%E9%82%A3%E4%BA%9B%E5%9D%91%EF%BC%88%E4%B8%80%EF%BC%89%E5%85%B3%E4%BA%8EQObject%E4%B8%8Bstarttimer%E5%AE%9A%E6%97%B6%E5%99%A8/">学qt的那些坑（一）关于QObject下starttimer定时器</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/03/08/%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2023-03-08T09:35:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/03/08/%E8%81%9A%E7%B1%BB%E7%AE%97%E6%B3%95/">聚类算法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/" class="archive-article-date">
-  	<time datetime="2023-02-22T04:08:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/02/22/opencv-c-%E7%89%B9%E5%BE%81%E6%8F%90%E5%8F%96%E4%B8%8E%E6%A3%80%E6%B5%8B/">opencv c++ 特征提取与检测</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2023-02-18T03:42:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/02/18/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">排序算法总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/02/15/makedown%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2023-02-15T09:26:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/02/15/makedown%E5%AD%A6%E4%B9%A0/">Markdown学习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/02/15/hello-world/" class="archive-article-date">
-  	<time datetime="2023-02-15T08:14:21.838Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-02-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/02/15/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -398,8 +350,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
