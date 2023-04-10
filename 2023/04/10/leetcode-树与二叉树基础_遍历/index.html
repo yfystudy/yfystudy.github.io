@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2023/4 | yfy的博客</title>
+  <title>leetcode 树与二叉树基础_遍历 | yfy的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学生一枚">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yfy的博客">
-<meta property="og:url" content="http://example.com/archives/2023/04/index.html">
+  <meta name="description" content="一  概念数据结构中的树是一种非线性存储结构，它由一个根结点和若干个子树组成，每个子树又是一棵树。树的结点具有层次关系，可以表示一对多的数据关系。 分类及具体介绍可参考数据结构中”树”的全面讲解 二 leetcode 中的树的基础中序遍历 leetcode-94 二叉树的中序遍历   给定一个二叉树的根节点 root ，返回 它的 中序 遍历 。  分析：二叉树的中序遍历是一种遍历二叉树的方法，它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode 树与二叉树基础_遍历">
+<meta property="og:url" content="http://example.com/2023/04/10/leetcode-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91%E5%9F%BA%E7%A1%80_%E9%81%8D%E5%8E%86/index.html">
 <meta property="og:site_name" content="yfy的博客">
-<meta property="og:description" content="学生一枚">
+<meta property="og:description" content="一  概念数据结构中的树是一种非线性存储结构，它由一个根结点和若干个子树组成，每个子树又是一棵树。树的结点具有层次关系，可以表示一对多的数据关系。 分类及具体介绍可参考数据结构中”树”的全面讲解 二 leetcode 中的树的基础中序遍历 leetcode-94 二叉树的中序遍历   给定一个二叉树的根节点 root ，返回 它的 中序 遍历 。  分析：二叉树的中序遍历是一种遍历二叉树的方法，它">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-04-10T03:00:07.000Z">
+<meta property="article:modified_time" content="2023-04-10T09:57:35.126Z">
 <meta property="article:author" content="yfy">
 <meta name="twitter:card" content="summary">
   
@@ -144,76 +146,182 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-leetcode-树与二叉树基础_遍历" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      leetcode 树与二叉树基础_遍历
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/04/10/leetcode-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91%E5%9F%BA%E7%A1%80_%E9%81%8D%E5%8E%86/" class="archive-article-date">
+
+        
+        <a href="/2023/04/10/leetcode-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91%E5%9F%BA%E7%A1%80_%E9%81%8D%E5%8E%86/" class="archive-article-date">
   	<time datetime="2023-04-10T03:00:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-10</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/04/10/leetcode-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91%E5%9F%BA%E7%A1%80_%E9%81%8D%E5%8E%86/">leetcode 树与二叉树基础_遍历</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一-概念"><a href="#一-概念" class="headerlink" title="一  概念"></a>一  概念</h1><p>数据结构中的树是一种非线性存储结构，它由一个根结点和若干个子树组成，每个子树又是一棵树。树的结点具有层次关系，可以表示一对多的数据关系。</p>
+<p>分类及具体介绍可参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/90255760">数据结构中”树”的全面讲解</a></p>
+<h1 id="二-leetcode-中的树的基础"><a href="#二-leetcode-中的树的基础" class="headerlink" title="二 leetcode 中的树的基础"></a>二 leetcode 中的树的基础</h1><h2 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h2><blockquote>
+<p>leetcode-94 二叉树的中序遍历</p>
+</blockquote>
+<blockquote>
+<p>给定一个二叉树的根节点 root ，返回 它的 中序 遍历 。</p>
+</blockquote>
+<p>分析：<br>二叉树的中序遍历是一种遍历二叉树的方法，它的顺序是先遍历左子树，再访问根节点，最后遍历右子树。共有三种方法，可以参考<a target="_blank" rel="noopener" href="https://blog.csdn.net/u012877472/article/details/49401751">二叉树中序遍历的三种方法</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">//1.递归法</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        if(root==nullptr)   </span><br><span class="line">            return result;</span><br><span class="line">        </span><br><span class="line">        inorder(result,root);</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    void inorder(vector&lt;int&gt; &amp;result,TreeNode *tree)</span><br><span class="line">    &#123;</span><br><span class="line">        if(tree==nullptr) return;</span><br><span class="line">        inorder(result,tree-&gt;left);</span><br><span class="line">        result.push_back(tree-&gt;val);</span><br><span class="line">        inorder(result,tree-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//2.迭代法 迭代法用栈</span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        if(root==nullptr) return result;</span><br><span class="line">        stack&lt;TreeNode*&gt; st;</span><br><span class="line">        TreeNode *curr=root;</span><br><span class="line">        while(curr!=nullptr ||(!st.empty()))</span><br><span class="line">        &#123;</span><br><span class="line">            while(curr!=nullptr)</span><br><span class="line">            &#123;</span><br><span class="line">                st.push(curr);</span><br><span class="line">                curr=curr-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            curr=st.top();</span><br><span class="line">            st.pop();</span><br><span class="line">            result.push_back(curr-&gt;val);</span><br><span class="line">            curr=curr-&gt;right;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">//3.Morris法 Morris法的思路是，找节点的左子树最右节点，然后指向该节点，回溯的时候打印，然后恢复节点，类似于线索。</span><br><span class="line">莫里斯遍历法的思想是利用叶子节点的右指针作为临时链接，指向当前节点的后继节点。这样就可以在不使用额外空间或修改树结构的情况下，按照左根右的顺序访问每个节点。算法的步骤如下：</span><br><span class="line"></span><br><span class="line">*   初始化当前节点为根节点。</span><br><span class="line">*   如果当前节点的左子树为空，那么输出当前节点的值，并将当前节点更新为右子节点。</span><br><span class="line">*   如果当前节点的左子树不为空，那么找到左子树中最右边的节 点，记为前驱节点。</span><br><span class="line">*   如果前驱节点的右指针为空，那么将它指向当前节点，并将当前节点更新为左子节点。</span><br><span class="line">*   如果前驱节点的右指针指向当前节点，那么说明左子树已经遍历完毕，将前驱节点的右指针恢复为空，输出当前节点的值，并将当前节点更新为右子节点。</span><br><span class="line">*   重复步骤2到5，直到当前节点为空。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; inorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        if(root==nullptr) return result;</span><br><span class="line">        TreeNode* curr=root;</span><br><span class="line">        TreeNode* prenode;</span><br><span class="line">        while(curr!=nullptr)</span><br><span class="line">        &#123;</span><br><span class="line">            if(curr-&gt;left==nullptr)</span><br><span class="line">            &#123;</span><br><span class="line">                result.push_back(curr-&gt;val);</span><br><span class="line">                curr=curr-&gt;right;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                prenode=curr-&gt;left;</span><br><span class="line">                while(prenode-&gt;right!=nullptr &amp;&amp; prenode-&gt;right!=curr)</span><br><span class="line">                &#123;</span><br><span class="line">                    prenode=prenode-&gt;right;</span><br><span class="line">                &#125;</span><br><span class="line">                if(prenode-&gt;right==curr)//回溯</span><br><span class="line">                &#123;</span><br><span class="line">                    prenode-&gt;right=nullptr;</span><br><span class="line">                    result.push_back(curr-&gt;val);</span><br><span class="line">                    curr=curr-&gt;right;</span><br><span class="line">                &#125;</span><br><span class="line">                else</span><br><span class="line">                &#123;</span><br><span class="line">                    prenode-&gt;right=curr;</span><br><span class="line">                    curr=curr-&gt;left;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h2><blockquote>
+<p>leetcode144 二叉树的前序遍历<br>给你二叉树的根节点 root ，返回它节点值的前序遍历.<br>可以仿照中序遍历来修改。</p>
+</blockquote>
+<ul>
+<li>递归法<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        if(root==nullptr) return result;</span><br><span class="line">        preorder(result,root);</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    void preorder(vector&lt;int&gt; &amp;result,TreeNode* curr)</span><br><span class="line">    &#123;</span><br><span class="line">        if(curr==nullptr) return;</span><br><span class="line">        result.push_back(curr-&gt;val);</span><br><span class="line">        preorder(result,curr-&gt;left);</span><br><span class="line">        preorder(result,curr-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>迭代法<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        if(root==nullptr) return result;</span><br><span class="line">        stack&lt;TreeNode*&gt; st;</span><br><span class="line">        TreeNode *curr=root;</span><br><span class="line">        while(!st.empty()||curr!=nullptr)</span><br><span class="line">        &#123;</span><br><span class="line">            while(curr!=nullptr)</span><br><span class="line">            &#123;</span><br><span class="line">                result.push_back(curr-&gt;val);</span><br><span class="line">                st.push(curr);</span><br><span class="line">                curr=curr-&gt;left;</span><br><span class="line">            &#125;</span><br><span class="line">            curr=st.top();</span><br><span class="line">            st.pop();</span><br><span class="line">            curr=curr-&gt;right; </span><br><span class="line">        &#125;</span><br><span class="line">    return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>morris法<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; preorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        if(root==nullptr) return result;</span><br><span class="line">        TreeNode* pre;</span><br><span class="line">        while(root!=nullptr)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            if(root-&gt;left==nullptr) </span><br><span class="line">            &#123;</span><br><span class="line">                result.push_back(root-&gt;val);</span><br><span class="line">                root=root-&gt;right;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                pre=root-&gt;left;</span><br><span class="line">                while(pre-&gt;right!=nullptr&amp;&amp;pre-&gt;right!=root)</span><br><span class="line">                    pre=pre-&gt;right;</span><br><span class="line">                if(pre-&gt;right==nullptr)</span><br><span class="line">                &#123;</span><br><span class="line">                    result.push_back(root-&gt;val);</span><br><span class="line">                    pre-&gt;right=root;</span><br><span class="line">                    root=root-&gt;left;</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    pre-&gt;right=nullptr;</span><br><span class="line">                    root=root-&gt;right;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h2><blockquote>
+<p>leetcode 145 </p>
+<p>给你一棵二叉树的根节点root,返回其节点值的后序遍历。</p>
+</blockquote>
+<ul>
+<li>递归法<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; postorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        if(root==nullptr) return result;</span><br><span class="line">        forwardorder(result,root);</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">private:</span><br><span class="line">    void forwardorder(vector&lt;int&gt; &amp;result,TreeNode* curr)</span><br><span class="line">    &#123;</span><br><span class="line">        if(curr==nullptr) return;</span><br><span class="line">        forwardorder(result,curr-&gt;left);</span><br><span class="line">        forwardorder(result,curr-&gt;right);</span><br><span class="line">        result.push_back(curr-&gt;val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>迭代法 左右根<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; postorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        if(root==nullptr) return result;</span><br><span class="line">        stack&lt;TreeNode*&gt; st;</span><br><span class="line">        st.push(root);</span><br><span class="line">        while(!st.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            TreeNode* curr=st.top();</span><br><span class="line">            result.push_back(curr-&gt;val);</span><br><span class="line">            st.pop();</span><br><span class="line">            if(curr-&gt;left) st.push(curr-&gt;left);</span><br><span class="line">            if(curr-&gt;right) st.push(curr-&gt;right);</span><br><span class="line">        &#125;</span><br><span class="line">        reverse(result.begin(),result.end());</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+<li>morris法 从根左根右转为根右左然后反转 参考<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-postorder-traversal/solution/morrisbian-li-suan-fa-jie-xi-qian-xu-bia-dt2x/">Morris遍历算法解析(前序遍历，中序遍历，后序遍历)</a></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    vector&lt;int&gt; postorderTraversal(TreeNode* root) &#123;</span><br><span class="line">        vector&lt;int&gt; result;</span><br><span class="line">        if(root==nullptr) return result;</span><br><span class="line">        TreeNode* pre;</span><br><span class="line">        while(root!=nullptr)</span><br><span class="line">        &#123;</span><br><span class="line">            </span><br><span class="line">            if(root-&gt;right==nullptr)</span><br><span class="line">            &#123;</span><br><span class="line">                result.push_back(root-&gt;val);</span><br><span class="line">                root=root-&gt;left;  </span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                pre=root-&gt;right;</span><br><span class="line">                while(pre-&gt;left!=nullptr&amp;&amp;pre-&gt;left!=root)</span><br><span class="line">                    pre=pre-&gt;left;</span><br><span class="line">                if(pre-&gt;left==nullptr)</span><br><span class="line">                &#123;</span><br><span class="line">                    pre-&gt;left=root;</span><br><span class="line">                    result.push_back(root-&gt;val);</span><br><span class="line">                    root=root-&gt;right;</span><br><span class="line">                &#125;</span><br><span class="line">                else&#123;</span><br><span class="line">                    pre-&gt;left=nullptr;</span><br><span class="line">                    root=root-&gt;left;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;</span><br><span class="line">        reverse(result.begin(),result.end());</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/04/10/leetcode-%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91%E5%9F%BA%E7%A1%80_%E9%81%8D%E5%8E%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/" class="archive-article-date">
-  	<time datetime="2023-04-05T06:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leetcode刷题总结 链表快慢双指针</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/04/05/leetcode%E5%88%B7%E9%A2%98%E6%80%BB%E7%BB%93-%E9%93%BE%E8%A1%A8%E5%8F%8C%E6%8C%87%E9%92%88%E4%B8%8E%E5%BF%AB%E6%85%A2%E5%8F%8C%E6%8C%87%E9%92%88/">leetcode刷题总结 链表快慢双指针</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -236,8 +344,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
